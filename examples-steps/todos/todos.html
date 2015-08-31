@@ -14,9 +14,11 @@
 
             {{> loginButtons}}
 
-            <form class="new-task">
-                <input name="text" placeholder="Type to add new tasks" type="text">
-            </form>
+            {{#if currentUser}}
+                <form class="new-task">
+                    <input name="text" placeholder="Type to add new tasks" type="text">
+                </form>
+            {{/if}}
         </header>
 
         <ul>
@@ -33,6 +35,6 @@
 
     <input checked="{{checked}}" class="toggle-checked" type="checkbox"/>
 
-    <span class="text">{{text}}</span>
+    <span class="text"> <strong>{{username}}</strong> {{text}}</span>
 </li>
 </template>
