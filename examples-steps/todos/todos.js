@@ -59,6 +59,10 @@ if (Meteor.isClient) {
             Tasks.remove(this._id);
         }
     });
+
+    Accounts.ui.config({
+        passwordSignupFields: 'USERNAME_ONLY'
+    });
 }
 
 if (Meteor.isServer) {
