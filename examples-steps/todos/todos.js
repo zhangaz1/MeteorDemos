@@ -1,6 +1,8 @@
 Tasks = new Mongo.Collection('tasks');
 
 if (Meteor.isClient) {
+    Meteor.subscribe('tasks');
+
     // This code only runs on the client
     Template.body.helpers({
         tasks: function() {
@@ -95,5 +97,9 @@ Meteor.methods({
 if (Meteor.isServer) {
     Meteor.startup(function() {
         // code to run on server at startup
+    });
+
+    Meteor.publish('tasks', function() {
+        return Tasks.find();
     });
 }
