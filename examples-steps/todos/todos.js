@@ -120,7 +120,7 @@ Meteor.methods({
 
 if (Meteor.isServer) {
     Meteor.startup(function() {
-        Kadira.connection('xbvcngCPSEzkCx4Ty', 'd657ff5a-b19d-4364-8acc-dc9573ce5568');
+        Kadira.connect('xbvcngCPSEzkCx4Ty', 'd657ff5a-b19d-4364-8acc-dc9573ce5568');
     });
 
     Meteor.publish('tasks', function() {
